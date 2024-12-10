@@ -3,8 +3,9 @@ import img2 from '../assets/img2.jpeg';
 import img3 from '../assets/img3.jpeg';
 import { useEffect, useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/css';
+import 'swiper/css/pagination';
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
@@ -90,10 +91,10 @@ function Hero() {
         <div className='hero'>
             <div className='hero-content' ref={swiperRef}>
                 <Swiper
-                    modules={[Autoplay]}
+                    modules={[Autoplay, Pagination]}
                     autoplay={{ delay: 5000, disableOnInteraction: false }}
                     navigation
-                    pagination={{ clickable: true }}
+                    pagination={{ clickable: true, el: '.swiper-pagination', }}
                     scrollbar={{ draggable: true }}
                     slidesPerView={1}
                     onSwiper={(swiper) => (changeRef.current = swiper)}
@@ -120,6 +121,7 @@ function Hero() {
                             </div>
                         </SwiperSlide>
                     ))}
+                    <div className="swiper-pagination"></div>
                     <div className='arr'>
                         <button onClick={() => changeRef.current.slidePrev()}><ion-icon name="chevron-back-outline"></ion-icon></button>
                         <button onClick={() => changeRef.current.slideNext()}><ion-icon name="chevron-forward-outline"></ion-icon></button>
