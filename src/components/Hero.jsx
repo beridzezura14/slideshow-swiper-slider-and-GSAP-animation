@@ -14,7 +14,7 @@ const slideList = [
     {
         id: 1,
         img: img1,
-        header: "Bali Iceland",
+        header: "Thailand",
         paragraph: "This paragraph, sit amet consectetur adipisicing elit. In deserunt id dolore praesentium voluptatem inventore."
     },
     {
@@ -53,20 +53,22 @@ function Hero() {
 
         gsap.fromTo(
             header,
-            { opacity: 0, y: 50 },
+            { opacity: 0, y: 200,  rotation: 5,},
             {
                 opacity: 1,
                 y: 0,
                 duration: 1,
+                rotation: 0,
                 ease: 'power1.out',
             }
         );
 
         gsap.fromTo(
             paragraph,
-            { opacity: 0, y: 50 },
+            { opacity: 0, y: 200, rotation: 5, },
             {
                 opacity: 1,
+                rotation: 0,
                 y: 0,
                 duration: 1,
                 delay: 0.2,
@@ -104,7 +106,8 @@ function Hero() {
                         <SwiperSlide className='swiper' key={item.id}>
                             <div className='swiper-item' style={{
                                 background: `linear-gradient(#00000086, black), url(${item.img})no-repeat center center / cover`,
-                                height: "100dvh",
+                                height: "93.5dvh",
+                                margin: "3dvh",
                                 display: "flex",
                                 justifyContent: "center",
                                 alignItems: "center",

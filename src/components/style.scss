@@ -5,8 +5,10 @@
 }
 
 .hero{
+    position: relative;
     width: 100%;
     height: 100dvh;
+    overflow: hidden;
 
     .hero-content{
 
@@ -24,6 +26,7 @@
                 padding: 10px;
                 border-radius: 10%;
                 cursor: pointer;
+                background-color: #00dfa2;
 
                 ion-icon{
                     font-size: 25px;
@@ -39,17 +42,141 @@
                 padding: 0 5%;
 
                 h1{
-                    font-size: 12vw;    
+                    font-size: 12vw; 
+                    color: #00dfa2;   
                 }
                 p{
-                    padding-top: 2rem;
-                    font-size: 4vw;
+                    padding-top: 1rem;
+                    font-size: 17px;
+                    line-height: 25px;
+
                 }
             }
             
         }
+
+
+
+        .swiper-pagination {
+            position: absolute;
+            bottom: 10% !important; /* ან შენი სასურველი მდებარეობა */
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 11111; 
+            .swiper-pagination-bullet {
+                width: 10px;
+                margin: 5px;
+                border: 2px solid white;
+                height: 10px;
+                margin: 0 5px;
+                /* background: #afafaf !important; */
+                opacity: 0.6;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+            
+            .swiper-pagination-bullet-active {
+                background: #00dfa2 !important; /* აქტიური წერტილის ფერი */
+                opacity: 1;
+                border: 2px solid #00dfa2;
+            }
+        
+        }
     }
 }
+
+.country{
+    position: relative;
+    overflow: hidden;
+    padding: 5rem 0;
+
+    .country-content{
+        max-width: 92%;
+        margin: auto;
+
+        .head{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 2rem;
+            h2{
+                font-size: 35px;
+            }
+
+            .arr{
+                margin-top: 2rem;
+                display: flex;
+                gap: 5px;
+
+
+                button{ 
+                    font-size: 20px;
+                    border: none;
+                    background-color: #00dfa2;
+                    padding: 10px;
+                    color: #fff;
+                }
+
+            }
+
+
+        }
+
+        .country-slide{
+            border-top: 1px solid #00dfa2;
+            padding-top: 2rem;
+            .coutry-item{
+                // border: 1px solid red;
+                
+                .item{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 30px;
+                    height: 200px;
+                    background-color: #00dfa2;
+                    font-size: 25px;
+
+
+                }
+            }
+            .swiper-pagination {
+                position: absolute;
+                bottom: -15% !important; /* ან შენი სასურველი მდებარეობა */
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 11111 !important; 
+
+
+                .swiper-pagination-bullet {
+                    width: 10px;
+                    height: 10px;
+                    margin: 5px;
+                    border: 2px solid white;
+                    margin: 0 5px;
+                    /* background: #afafaf !important; */
+                    // opacity: 0.6;
+                    border-radius: 50%;
+                    cursor: pointer;
+                }
+                
+                .swiper-pagination-bullet-active {
+                    background: #00dfa2!important; /* აქტიური წერტილის ფერი */
+                    opacity: 1;
+                    border: 2px solid #00dfa2 ;
+                }
+            
+            }
+
+        }
+
+    }
+}
+
 
 @media (min-width: 1024px){
     .hero{
